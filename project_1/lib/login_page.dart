@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -40,10 +42,10 @@ class _LoginPageState extends State<LoginPage> {
             _icon(),
             const SizedBox(height:50),
             _inputField("Username", usernameController),
-               const SizedBox(height:50),
+               const SizedBox(height:25),
             _inputField("Password", passwordController,isPassword: true),
                const SizedBox(height:50),
-            
+            _loginBtn(),
             
           ],
         ),
@@ -65,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
            {isPassword = false}){
             
             var border = OutlineInputBorder(
-              borderRadius: BorderRadius.circular(35),
+              borderRadius: BorderRadius.circular(20),
               borderSide: const BorderSide(color: Colors.white));
             
             return TextField(
@@ -82,6 +84,16 @@ class _LoginPageState extends State<LoginPage> {
      }
 
      Widget _loginBtn() {
-      return ElevatedButton(onPressed: (){}, child: Text("sign in"));
+      return ElevatedButton(
+      onPressed: () {}, 
+       child: const SizedBox(
+        width: double.infinity,
+        child: Text(
+          "Sign in",
+        textAlign: TextAlign.center,
+        style: TextStyle(fontSize: 20),
+      )),
+   
+      );
      }
 }
